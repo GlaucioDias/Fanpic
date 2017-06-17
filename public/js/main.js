@@ -1,1 +1,1 @@
-angular.module('fanpic', []);
+angular.module('fanpic', ['minhasDependencias']);
