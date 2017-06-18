@@ -1,1 +1,1 @@
-angular.module('fanpic', ['minhasDependencias']);
+angular.module('fanpic', ['minhasDiretivas']);

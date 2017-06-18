@@ -16,15 +16,10 @@
             <div class="jumbotron">
                 <h1 class="text-center">Fanpic</h1>
             </div>
-            <div ng-repeat="foto in fotos" class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title text-center">{{foto.titulo}}</h3>
-                </div>
-           
-                <div class="panel-body">
+            <meu-painel ng-repeat="foto in fotos" titulo="{{foto.titulo}}">
                     <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">    
                 </div>
-            </div> <!-- fim do painel -->
+            </meu-painel>
             
             
         </div> <!-- fim container -->        
