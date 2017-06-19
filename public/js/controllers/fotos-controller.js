@@ -1,7 +1,7 @@
 angular.module('fanpic').controller('FotosController', function($scope, $http) {
 
 	$scope.fotos = [];
-	$scope.filtro = '';
+	$scope.filtro = ''; // tratamento bi-direcional da informação
 
 	// $http.get('v1/fotos').success(function(fotos) {
 	// 	$scope.fotos = fotos;
