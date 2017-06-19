@@ -1,12 +1,12 @@
-.painel-animado.ng-leave-active {
-	-moz-transform: scale(0.1);
+.painel-animado.ng-leave-active { /*condição AND, aplicado aos elementos que estão saindo da lista*/
+	-moz-transform: scale(0.1);		/*s*/
 	-webkit-transform: scale(0.1);	
 	-ms-transform: scale(0.1);
 	-o-transform: scale(0.1);
 	transform: scale(0.1);
 }
 
-.painel-animado {
+.painel-animado { /*herda o modulo ng-leave*/
 	-moz-transition:transform 0.8s;
 	-webkit-transition:transform 0.8s;	
 	-ms-transition:transform 0.8s;
