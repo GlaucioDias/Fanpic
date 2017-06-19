@@ -1,0 +1,24 @@
+<div class="jumbotron">
+	<h1 class="text-center">Fanpic</h1>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+	<form>
+		<div class="input-group">
+			<span class="input-group-btn">
+				<a href="fotos/new" class="btn btn-primary">Nova Foto</a>			
+			</span>
+			
+			
+			<input class="form-control" placeholder="filtrar pelo título da foto" ng-model="filtro" ng-model-options="{ debounce: 500 }">
+		</div>			 
+	</form>
+	</div> <!-- fim do col-md-12 -->
+</div> <!-- fim do row -->
+
+<div class="row">
+    <meu-painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter: filtro" titulo="{{foto.titulo}}">
+        <minha-foto url="{{foto.url}}" alt="{{foto.titulo}}"></minha-foto>
+    </meu-painel>
+</div>

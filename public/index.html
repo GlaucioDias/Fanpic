@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="fanpic">
     <head>
+        <base href="/"> <!-- Referência: routeProvider / locationProvider  (main.js)-->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Fanpic</title>
@@ -9,30 +10,17 @@
         <link rel="stylesheet" href="css/efeitos.css">
         <script src="js/lib/angular.min.js"></script>
         <script src="js/lib/angular-animate.min.js"></script> <!-- importando o modulo ngAnimate -->
+        <script src="js/lib/angular-route.min.js"></script>   <!-- importando o script do módulo ngRoute -->
         <script src="js/main.js"></script>
-        <script src="js/controllers/fotos-controller.js"></script>
+        <script src="js/controllers/fotos-controller.js"></script> <!-- controller do index.html -->
+        <script src="js/controllers/foto-controller.js"></script> <!-- controller do foto.html --> 
         <script src="js/directives/minhas-diretivas.js"></script>
     </head>
     <body ng-controller="FotosController">
         <div class="container">
-            <div class="jumbotron">
-                <h1 class="text-center">Fanpic</h1>
-            </div>
-            <div class="row"> <!-- divide em colunas -->
-                <div class="col-md-12">
-                    <form>
-                        <input ng-model="filtro" class="form-control" placeholder="filtrar pelo titulo da foto">
-                    </form>
-                </div> <!-- fim col-md-12 -->
-            </div> <!-- fim row -->
 
-            <div class="row">
-                <!-- adicionando a classe painel-animado -->
-                <meu-painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter: filtro" titulo="{{foto.titulo}}">
-                    <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">    
-                </meu-painel>
-            </div>                        
-        </div> <!-- fim container -->        
+            <ng-view></ng-view>   
+        </div> <!-- fim container -->
     </body>
 </html>
 
