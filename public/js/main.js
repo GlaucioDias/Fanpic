@@ -1,1 +1,1 @@
-angular.module('fanpic', ['minhasDiretivas']);
+angular.module('fanpic', ['minhasDiretivas', 'ngAnimate']);
