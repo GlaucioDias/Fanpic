@@ -13,5 +13,10 @@ angular.module('fanpic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
 			controller: 'FotoController'
 		});
 
+		$routeProvider.when('/fotos/edit/:fotoId', { //rota do angular apontando para o Id da foto
+			templateUrl: 'partials/foto.html',
+			controller: 'FotoController'
+		});
+
 		$routeProvider.otherwise({redirectTo: '/fotos'});
 	});
