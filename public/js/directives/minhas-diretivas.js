@@ -29,5 +29,20 @@ return ddo;
 	ddo.template = '<img class="img-responsive center-block" src="{{url}}" alt="{{titulo}}">';
 
 	return ddo;
+})
+.directive('meuBotaoPerigo', function() {
+
+	var ddo = {};
+	ddo.restrict = "E";
+
+	ddo.scope = {
+		nome: '@', // '@' passa como valor uma string
+		acao: '&' // caso scope.acao esteja associado à uma função de um controller
+	};
+
+	ddo.template = '<button ng-click="acao(foto)" class="btn btn-danger btn-block">{{nome}}</button>';
+
+	return ddo;
+
 });
 

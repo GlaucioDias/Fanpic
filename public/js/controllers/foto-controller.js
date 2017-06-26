@@ -31,6 +31,7 @@ angular.module('fanpic')
 					$http.post('/v1/fotos', $scope.foto)
 					.success(function() {
 						$scope.foto = {};
+						$scope.formulario.$setPristine(); // previne validação após  limpar formuário
 						$scope.mensagem = 'Foto incluída com sucesso';
 					})
 					.error(function(erro) {
@@ -39,6 +40,6 @@ angular.module('fanpic')
 					});
 				}
 			}
-	};
+		};
 
 });
