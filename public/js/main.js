@@ -1,4 +1,4 @@
-angular.module('fanpic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
+angular.module('fanpic', ['minhasDiretivas', 'ngAnimate', 'ngRoute', 'meusServicos'])
 	.config(function($routeProvider, $locationProvider) {
 
 		$locationProvider.html5Mode(true); //habilita o locationProvider para retirada do '#' na barra de endereço
