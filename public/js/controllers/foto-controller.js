@@ -1,6 +1,6 @@
 angular.module('fanpic')
 	.controller('FotoController', function($scope, recursoFoto, $routeParams, cadastroDeFotos) {
-	
+
 		$scope.foto = {};
 		$scope.mensagem = '';
 
@@ -12,14 +12,15 @@ angular.module('fanpic')
 				$scope.mensagem = 'Não foi possível obter a foto';
 			});
 		}
-				
+
 		$scope.submeter = function() {
-			
+
 			if ($scope.formulario.$valid) {
 				cadastroDeFotos.cadastrar($scope.foto) //* erro
 				.then(function(dados) {
 					$scope.mensagem = dados.mensagem;
 					if(dados.inclusao) $scope.foto = {};
+					
 				})
 				.catch(function(erro) {
 					$scope.mensagem = erro.mensagem;

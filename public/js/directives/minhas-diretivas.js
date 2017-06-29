@@ -10,9 +10,9 @@ angular.module('minhasDiretivas', [])
 	ddo.scope = {
 		titulo: '@'
 	};
-	
+
 	ddo.templateUrl = 'js/directives/meu-painel.html';
-	
+
 return ddo;
 })
 .directive('minhaFoto', function() {
@@ -44,5 +44,33 @@ return ddo;
 
 	return ddo;
 
-});
+})
+.directive('meuFocus', function() {
 
+	var ddo = {}
+
+	ddo.restrict = "A";
+
+	ddo.link = function(scope, element) {
+				scope.$on('fotoCadastrada', function() {
+					element[0].focus();
+				})
+
+
+	}
+
+	return ddo;
+})
+.directive('meusTitulos', function () {
+	var ddo = {};
+	ddo.restrict = 'E';
+	ddo.template = '<ul><li ng-repeat="titulo in titulos">{{titulo}}</li></ul>';
+	ddo.controller = function($scope, recursoFoto) {
+		recursoFoto.query(function(fotos) {
+			$scope.titulos = fotos.map(function(foto) {
+				return foto.titulo;
+			});
+		});
+	};
+	return ddo;
+});

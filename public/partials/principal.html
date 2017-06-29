@@ -11,12 +11,12 @@
 	<form>
 		<div class="input-group">
 			<span class="input-group-btn">
-				<a href="fotos/new" class="btn btn-primary" type="button">Nova Foto</a>			
+				<a href="fotos/new" class="btn btn-primary" type="button">Nova Foto</a>
 			</span>
-			
-			
+
+
 			<input class="form-control" placeholder="filtrar pelo título da foto" ng-model="filtro" ng-model-options="{ debounce: 500 }">
-		</div>			 
+		</div>
 	</form>
 	</div> <!-- fim do col-md-12 -->
 </div> <!-- fim do row -->
@@ -27,7 +27,9 @@
         <a href="fotos/edit/{{foto._id}}" class="btn btn-primary btn-block">Editar</a> <!-- Adição do botão Editar -->
         <!-- <button ng-click="remover(foto)" class="btn btn-danger btn-block">Remover</button> --> <!-- Adição do botão remover -->
 
-          
+
         <meu-botao-perigo acao="remover(foto)" nome="Remover"></meu-botao-perigo>
     </meu-painel>
 </div>
+
+<meus-titulos></meus-titulos>

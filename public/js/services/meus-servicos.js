@@ -6,13 +6,16 @@ angular.module('meusServicos', ['ngResource'])
 		}
 	});
 })
-.factory('cadastroDeFotos', function(recursoFoto, $q) { //$q permite criar minhas próprias promises
+.factory('cadastroDeFotos', function(recursoFoto, $q, $rootScope) { //$q permite criar minhas próprias promises
 	var service = {};
+
+	var evento = 'fotoCadastrada';
 
 	service.cadastrar = function(foto) {
 		return $q(function(resolve, reject) {
 			if(foto._id) {
 				recursoFoto.update({fotoId: foto._id}, foto, function() {
+					$rootScope.$broadcast('evento');
 					resolve({ // resolve não aceita receber vários parámetros concatenados ex: resolve('Foto ' + foto.titulo + ' incluída com sucesso!')
 						mensagem: 'Foto ' + foto.titulo + ' atualizada com sucesso!', // utiliza-se um objeto {} ex: resolve ({});
 						inclusao: false
@@ -26,6 +29,7 @@ angular.module('meusServicos', ['ngResource'])
 				});
 			} else {
 				recursoFoto.save(foto, function() {
+					$rootScope.$broadcast('evento');
 					resolve({
 						mensagem : 'Foto ' + foto.titulo + ' incluída com sucesso!',
 						inclusao: true
