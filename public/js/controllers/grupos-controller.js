@@ -1,6 +1,6 @@
 angular.module('fanpic').controller('GruposController', function($scope, $http) {
 
-	$scope.grupos = [];
+	// $scope.grupos = [];
 
 	$http.get('v1/grupos')
 		.success(function(grupos) {
